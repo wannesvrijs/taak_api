@@ -12,7 +12,7 @@ $count = count($uri_parts);
 $last_part = end($uri_parts);
 $second_last_part = $uri_parts[$count-2];
 
-if($count == 3 AND $last_part == 'taken') {
+if($count == $uri_count AND $last_part == 'taken') {
     if ($_SERVER['REQUEST_METHOD'] == 'GET'){
         $apiActions->read();
         return true;
@@ -27,7 +27,7 @@ if($count == 3 AND $last_part == 'taken') {
     }
 }
 
-if($count == 4 AND $second_last_part == 'taken') {
+if($count == $uri_count + 1 AND $second_last_part == 'taken') {
     if ($_SERVER['REQUEST_METHOD'] == 'GET'){
         $apiActions->read($last_part);
         return true;
