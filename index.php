@@ -45,3 +45,4 @@ if($count == $uri_count + 1 AND $second_last_part == 'taken') {
         return false;
     }
 }
+?>
